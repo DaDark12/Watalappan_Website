@@ -18,4 +18,4 @@ npm run dev
 - Lucide Icons
 
 ## 🖼️ Preview
-<img src="./preview.png" width="600" />
+<img src="./assets/WatalappanSVG.jsx" width="600" />
