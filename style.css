@@ -1,6 +1,6 @@
 /* Reset & base */
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-body { background: linear-gradient(180deg, #fff8f0, #f5e1c2); color: #3b2f2f; }
+body { background: linear-gradient(180deg, #fff8f0, #f5e1c2); color: #3b2f2f; scroll-behavior: smooth; }
 a { text-decoration: none; color: inherit; }
 
 /* Glassy navbar */
@@ -14,10 +14,11 @@ a { text-decoration: none; color: inherit; }
 .navbar a { margin: 0 1rem; font-weight: 600; transition: color 0.3s; }
 .navbar a:hover { color: #c17a2c; }
 
-/* Hero section */
-.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 1rem; }
+/* Hero Section */
+.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 1rem; margin-top: 4rem; }
 .hero h1 { font-size: 3rem; margin-bottom: 1rem; color: #8B5E34; text-shadow: 1px 1px 4px rgba(0,0,0,0.2); }
 .hero p { font-size: 1.25rem; max-width: 600px; line-height: 1.6; margin-bottom: 2rem; }
+.hero-svg { width: 320px; height: 220px; }
 
 /* Liquid-glass card */
 .card {
