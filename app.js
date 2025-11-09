@@ -1,11 +1,20 @@
-// Add 3D parallax scroll and glass glow effects
-document.addEventListener("scroll", () => {
-  const scroll = window.scrollY;
-  document.body.style.backgroundPositionY = `${scroll * 0.3}px`;
+// Smooth scrolling and navbar animation
+document.querySelectorAll(".navbar a").forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute("href"));
+    window.scrollTo({
+      top: target.offsetTop - 60,
+      behavior: "smooth",
+    });
+  });
 });
 
-const nav = document.querySelector(".glass-nav");
+// Add scroll effect to navbar
+const nav = document.querySelector(".navbar");
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 80) nav.classList.add("active");
-  else nav.classList.remove("active");
+  nav.style.backdropFilter = window.scrollY > 50 ? "blur(20px)" : "blur(12px)";
+  nav.style.background = window.scrollY > 50
+    ? "rgba(255, 255, 255, 0.4)"
+    : "rgba(255, 255, 255, 0.3)";
 });
