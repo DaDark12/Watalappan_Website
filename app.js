@@ -1,52 +1,18 @@
-// ========== DARK/LIGHT THEME TOGGLE ==========
+// ===== DARK/LIGHT MODE TOGGLE =====
 const body = document.body;
-
-// Create a toggle button in navbar
 const navbar = document.querySelector('.navbar');
+
 const themeBtn = document.createElement('button');
 themeBtn.innerText = '🌙';
 themeBtn.classList.add('theme-toggle');
-themeBtn.style.marginLeft = '1rem';
-themeBtn.style.padding = '0.3rem 0.7rem';
-themeBtn.style.border = 'none';
-themeBtn.style.borderRadius = '8px';
-themeBtn.style.cursor = 'pointer';
-themeBtn.style.background = 'rgba(255,255,255,0.6)';
 navbar.appendChild(themeBtn);
 
 themeBtn.addEventListener('click', () => {
   body.classList.toggle('dark-mode');
-  if(body.classList.contains('dark-mode')) {
-    themeBtn.innerText = '☀️';
-  } else {
-    themeBtn.innerText = '🌙';
-  }
+  themeBtn.innerText = body.classList.contains('dark-mode') ? '☀️' : '🌙';
 });
 
-// Dark mode CSS changes
-const style = document.createElement('style');
-style.innerHTML = `
-  body.dark-mode {
-    background: #1a1a1a;
-    color: #f0f0f0;
-  }
-  body.dark-mode .card {
-    background: rgba(30,30,30,0.85);
-    box-shadow: 0 10px 20px rgba(255,255,255,0.05);
-  }
-  body.dark-mode .navbar {
-    background: rgba(20,20,20,0.95);
-  }
-  body.dark-mode .navbar a {
-    color: #f0f0f0;
-  }
-  body.dark-mode .navbar a:hover {
-    color: #ffcc66;
-  }
-`;
-document.head.appendChild(style);
-
-// ========== SMOOTH SCROLL FOR NAV LINKS ==========
+// ===== SMOOTH SCROLL =====
 document.querySelectorAll('.navbar a').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
@@ -54,43 +20,57 @@ document.querySelectorAll('.navbar a').forEach(link => {
     const target = document.getElementById(targetId);
     if(target){
       window.scrollTo({
-        top: target.offsetTop - 70, // adjust for navbar
-        behavior: 'smooth'
+        top: target.offsetTop - 80,
+        behavior:'smooth'
       });
     }
   });
 });
 
-// ========== OPTIONAL SUBTLE BG ANIMATION ==========
+// ===== HERO BUBBLES ANIMATION =====
 const hero = document.getElementById('hero');
 if(hero){
-  const bubbles = [];
   for(let i=0;i<15;i++){
     const bubble = document.createElement('div');
     bubble.classList.add('bubble');
     bubble.style.left = Math.random()*100+'%';
+    bubble.style.width = bubble.style.height = 20+Math.random()*30+'px';
     bubble.style.animationDelay = Math.random()*5+'s';
-    bubble.style.width = bubble.style.height = 20 + Math.random()*20 + 'px';
     hero.appendChild(bubble);
-    bubbles.push(bubble);
   }
-
-  // CSS for bubbles
-  const bubbleStyle = document.createElement('style');
-  bubbleStyle.innerHTML = `
-    .bubble {
-      position: absolute;
-      bottom: -40px;
-      background: rgba(255,255,255,0.2);
-      border-radius: 50%;
-      pointer-events: none;
-      animation: rise 8s linear infinite;
-    }
-    @keyframes rise {
-      0% { transform: translateY(0) scale(1); opacity:0.2; }
-      50% { opacity:0.4; }
-      100% { transform: translateY(-400px) scale(1.2); opacity:0; }
-    }
-  `;
-  document.head.appendChild(bubbleStyle);
 }
+
+// ===== CARD 3D HOVER =====
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const cx = rect.width/2;
+    const cy = rect.height/2;
+    const dx = (x-cx)/20;
+    const dy = (y-cy)/20;
+    card.style.transform = `translateY(-10px) rotateX(${-dy}deg) rotateY(${dx}deg)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'translateY(0) rotateX(0) rotateY(0)';
+  });
+});
+
+// ===== HERO IMAGE 3D TILT =====
+const heroImg = document.getElementById('hero-img');
+if(heroImg){
+  heroImg.addEventListener('mousemove', e => {
+    const rect = heroImg.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const cx = rect.width/2;
+    const cy = rect.height/2;
+    const dx = (x-cx)/40;
+    const dy = (y-cy)/40;
+    heroImg.style.transform = `rotateX(${-dy}deg) rotateY(${dx}deg) scale(1.03)`;
+  });
+  heroImg.addEventListener('mouseleave', () => {
+    heroImg.style.transform = 'rotateX(0) rotateY(0) scale(1)';
+  });
+});
