@@ -1,4 +1,4 @@
-/* Base reset */
+/* Reset & Base */
 * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
 body { background: linear-gradient(180deg,#fff8f0,#f5e1c2); color:#3b2f2f; scroll-behavior:smooth; }
 a { text-decoration:none; color:inherit; }
@@ -16,7 +16,8 @@ a { text-decoration:none; color:inherit; }
 
 /* Hero */
 .hero { min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:0 1rem; margin-top:4rem; position:relative; }
-.hero-bg { position:absolute; inset:0; background:radial-gradient(circle at center,#fff3e0,#f5e1c2); filter:blur(50px); z-index:-1; }
+.hero-bg { position:absolute; inset:0; background:radial-gradient(circle at center,#fff3e0,#f5e1c2); filter:blur(50px); z-index:-1; animation: swirl 20s linear infinite; }
+@keyframes swirl { 0% {transform:rotate(0deg);} 100% {transform:rotate(360deg);} }
 .hero h1 { font-size:3rem; margin-bottom:1rem; color:#8B5E34; text-shadow:1px 1px 4px rgba(0,0,0,0.2);}
 .hero p { font-size:1.25rem; max-width:600px; line-height:1.6; margin-bottom:2rem;}
 .hero-img-container { perspective:800px; text-align:center; }
