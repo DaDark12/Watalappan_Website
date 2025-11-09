@@ -1,4 +1,5 @@
-/* Universal reset */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -7,151 +8,105 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  color: #4b2e17;
-  background: linear-gradient(135deg, #fff6e9, #ffdba8, #ffb46e);
-  background-size: 300% 300%;
-  animation: gradientMove 12s ease infinite;
+  background: linear-gradient(135deg, #e8dff5, #f6d6ad, #f8f3d4, #d5f5e3);
+  background-size: 400% 400%;
+  animation: bgShift 15s infinite alternate;
+  color: #222;
   overflow-x: hidden;
 }
 
-@keyframes gradientMove {
+@keyframes bgShift {
   0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
-.glass {
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 1.5rem;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-/* Navbar */
-.navbar {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+.nav-glass {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 85%;
-  padding: 0.8rem 1.8rem;
-  z-index: 1000;
-  transition: all 0.3s ease;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  border-radius: 50px;
+  margin: 1rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
 }
 
-.navbar ul {
-  display: flex;
-  list-style: none;
-  gap: 1.5rem;
+.nav-glass h1 {
+  font-weight: 600;
+  color: #4b2e05;
 }
 
-.navbar a {
+.nav-glass nav a {
+  margin: 0 1rem;
   text-decoration: none;
-  color: #4b2e17;
+  color: #4b2e05;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: 0.3s;
 }
 
-.navbar a:hover {
-  color: #b77429;
+.nav-glass nav a:hover {
+  color: #a86403;
 }
 
-/* Hero Section */
 .hero {
-  text-align: center;
-  padding: 8rem 1rem 4rem;
-}
-
-.hero-inner {
-  display: inline-block;
-  max-width: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   padding: 2rem;
-}
-
-.hero h1 {
-  font-size: 2.6rem;
-  color: #5b371d;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  color: #7a5233;
-  font-size: 1.1rem;
-  margin-bottom: 1.8rem;
 }
 
 .hero-img {
   width: 220px;
-  border-radius: 1.2rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-  transform: perspective(600px) rotateY(-6deg);
-  transition: transform 0.7s ease, box-shadow 0.7s ease;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transform: perspective(1000px) rotateY(-5deg);
+  transition: transform 0.3s;
 }
 
 .hero-img:hover {
-  transform: perspective(600px) rotateY(0deg) scale(1.06);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  transform: perspective(1000px) rotateY(0deg);
 }
 
-/* Sections */
-.section {
-  max-width: 950px;
-  margin: 4rem auto;
+.glass-card {
+  margin: 2rem auto;
   padding: 2rem;
+  width: 80%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+  transition: 0.3s;
 }
 
-.section h2 {
-  text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+.glass-card:hover {
+  transform: translateY(-5px);
 }
 
-.section p {
-  line-height: 1.6;
-  color: #54371f;
-  margin-bottom: 1rem;
-}
-
-.recipe-container {
+.gallery-grid {
   display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.ingredients,
-.steps {
-  flex: 1;
-  min-width: 260px;
-  padding: 1.5rem;
-}
-
-/* Gallery */
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
 }
 
-.gallery img {
-  width: 270px;
-  border-radius: 1rem;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-  transition: transform 0.5s;
+.gallery-grid img {
+  width: 250px;
+  border-radius: 20px;
+  transition: 0.3s;
 }
 
-.gallery img:hover {
-  transform: scale(1.06);
+.gallery-grid img:hover {
+  transform: scale(1.05);
 }
 
-/* Footer */
-.footer {
+footer {
   text-align: center;
-  padding: 1.5rem;
-  font-size: 0.9rem;
-  color: #6d4b1d;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 30px 30px 0 0;
+  margin-top: 3rem;
 }
