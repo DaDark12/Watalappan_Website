@@ -1,47 +1,56 @@
-jsx
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import { Sun, Moon } from 'lucide-react';
+import React from 'react';
 import WatalappanSVG from '../assets/WatalappanSVG';
 
 export default function WatalappanLanding() {
-const [dark, setDark] = useState(false);
+  return (
+    <div>
+      {/* Navbar */}
+      <nav className="navbar">
+        <div className="logo">🍮 Watalappan</div>
+        <div className="links">
+          <a href="#hero">Home</a>
+          <a href="#recipe">Recipe</a>
+          <a href="#history">History</a>
+          <a href="#gallery">Gallery</a>
+        </div>
+      </nav>
 
-useEffect(() => {
-document.documentElement.classList.toggle('dark', dark);
-}, [dark]);
+      {/* Hero Section */}
+      <section id="hero" className="hero">
+        <h1>Watalappan: The Royal Dessert of Sri Lanka</h1>
+        <p>A creamy, caramel-rich pudding made with coconut milk, jaggery, and fragrant spices, treasured across Sri Lanka for generations.</p>
+        <WatalappanSVG />
+      </section>
 
-return (
-<div className="min-h-screen bg-gradient-to-b from-amber-50 to-amber-100 dark:from-slate-900 dark:to-slate-800">
-<nav className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-<div className="flex gap-3 items-center">
-<div className="w-10 h-10 bg-gradient-to-br from-amber-300 to-amber-500 rounded-2xl flex items-center justify-center text-white font-bold shadow">W</div>
-<div>
-<h1 className="text-lg font-semibold text-amber-900 dark:text-amber-100">Watalappan</h1>
-<p className="text-xs text-amber-700/80 dark:text-amber-200/70">Sri Lanka’s Silky Coconut Jaggery Custard</p>
-</div>
-</div>
+      {/* Recipe Section */}
+      <section id="recipe" className="section">
+        <h2>Recipe</h2>
+        <div className="card">
+          <p>Ingredients: Coconut milk, jaggery, eggs, cardamom, nutmeg, pandan leaves.</p>
+          <p>Method: Mix ingredients → steam gently → chill → serve with coconut cream drizzle.</p>
+        </div>
+      </section>
 
-<button
-onClick={() => setDark(!dark)}
-className="p-2 bg-white/60 dark:bg-black/40 rounded-lg border border-white/30 dark:border-black/30"
->
-{dark ? <Sun size={18} /> : <Moon size={18} />}
-</button>
-</nav>
+      {/* History Section */}
+      <section id="history" className="section">
+        <h2>History</h2>
+        <div className="card">
+          <p>Watalappan originated in Sri Lanka influenced by Malay desserts, becoming a signature coconut-jaggery custard served at festive occasions and weddings.</p>
+        </div>
+      </section>
 
-<header className="max-w-6xl mx-auto p-6 text-center">
-<motion.h2 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-4xl font-bold text-amber-900 dark:text-amber-100">
-Watalappan — Liquid Gold Dessert
-</motion.h2>
-<p className="mt-4 text-amber-800/90 dark:text-amber-200/80 max-w-2xl mx-auto">
-A creamy, caramel-rich pudding that captures the soul of Sri Lanka — made with coconut milk, jaggery, and fragrant spices.
-</p>
+      {/* Gallery Section */}
+      <section id="gallery" className="section">
+        <h2>Gallery</h2>
+        <div className="card">
+          <img src="./src/assets/watalappan.svg" alt="Watalappan Dish" className="w-full" />
+        </div>
+      </section>
 
-<div className="mt-10 flex justify-center">
-<WatalappanSVG />
-</div>
-</header>
-</div>
-);
+      {/* Footer */}
+      <footer>
+        &copy; 2025 Watalappan Website • Sri Lanka 🇱🇰
+      </footer>
+    </div>
+  );
 }
