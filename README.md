@@ -1,16 +1,21 @@
-# Watalappan Website 🍮
+md
+# 🍮 Watalappan — The Sri Lankan Liquid Gold
 
-A modern static website celebrating **Watalappan**, a Sri Lankan dessert made from coconut milk, jaggery, eggs, and spices.
+A modern, glassy, 3D-inspired website for Sri Lanka’s traditional dessert, **Watalappan**.
 
-## 💡 About
-Watalappan is a beloved Sri Lankan treat with Malay roots. This project highlights its history, ingredients, and preparation using a clean design and responsive layout.
+## 🚀 Run Locally
+```bash
+git clone https://github.com/yourusername/watalappan-website.git
+cd watalappan-website
+npm install
+npm run dev
+```
 
-## 🛠 Tech Stack
-- HTML5  
-- CSS3  
-- JavaScript  
+## 💡 Tech Stack
+- React + Vite
+- Tailwind CSS
+- Framer Motion
+- Lucide Icons
 
-## 🚀 How to Run
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/watalappan-website.git
+## 🖼️ Preview
+<img src="./preview.png" width="600" />
