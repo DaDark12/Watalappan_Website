@@ -1,6 +1,5 @@
-// Floating card hover effect
-const cards = document.querySelectorAll('.card');
-cards.forEach(card => {
+// Card hover 3D tilt
+document.querySelectorAll('.card').forEach(card => {
   card.addEventListener('mousemove', e => {
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
@@ -16,18 +15,18 @@ cards.forEach(card => {
   });
 });
 
-// Hero SVG subtle tilt
-const heroSvg = document.querySelector('.hero-svg');
-if(heroSvg){
-  heroSvg.addEventListener('mousemove', e=>{
-    const rect = heroSvg.getBoundingClientRect();
+// Hero image subtle tilt
+const heroImg = document.querySelector('.hero-img');
+if(heroImg){
+  heroImg.addEventListener('mousemove', e=>{
+    const rect = heroImg.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
     const cx = rect.width/2;
     const cy = rect.height/2;
     const dx = (x-cx)/40;
     const dy = (y-cy)/40;
-    heroSvg.style.transform = `rotateX(${-dy}deg) rotateY(${dx}deg)`;
+    heroImg.style.transform = `rotateX(${-dy}deg) rotateY(${dx}deg)`;
   });
-  heroSvg.addEventListener('mouseleave', ()=>{ heroSvg.style.transform = 'rotateX(0) rotateY(0)'; });
+  heroImg.addEventListener('mouseleave', ()=>{ heroImg.style.transform = 'rotateX(0) rotateY(0)'; });
 }
