@@ -3,93 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Watalappan | Sri Lanka’s Golden Dessert</title>
+    <meta name="description" content="Watalappan - Sri Lanka’s Silky Coconut Jaggery Dessert" />
+    <title>Watalappan | Sri Lankan Dessert</title>
     <link rel="stylesheet" href="style.css" />
+    <script defer src="app.js"></script>
   </head>
   <body>
-    <!-- ===== NAVBAR ===== -->
-    <nav class="navbar">
+    <nav class="glass-nav">
       <div class="logo">🍮 Watalappan</div>
-      <div class="links">
-        <a href="#hero">Home</a>
-        <a href="#history">History</a>
-        <a href="#recipe">Recipe</a>
-        <a href="#gallery">Gallery</a>
-      </div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#recipe">Recipe</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+      </ul>
     </nav>
 
-    <!-- ===== HERO ===== -->
-    <section id="hero" class="hero">
-      <h1>Sri Lanka’s Liquid Gold</h1>
+    <header class="hero">
+      <div class="hero-content">
+        <h1>Watalappan — The Golden Taste of Sri Lanka</h1>
+        <p>A smooth, creamy custard made with jaggery, coconut milk, and fragrant spices.</p>
+        <img src="assets/watalappan1.jpg" alt="Watalappan Dessert" class="hero-img" />
+      </div>
+    </header>
+
+    <section id="about" class="section glass">
+      <h2>About Watalappan</h2>
       <p>
-        Watalappan is a silky coconut custard blended with jaggery, cardamom, and nutmeg — 
-        a dessert that defines Sri Lankan celebration.
+        Watalappan is a traditional Sri Lankan dessert deeply tied to the country’s Malay heritage.
+        It’s a coconut custard pudding sweetened with palm jaggery and spiced with cardamom and nutmeg.
+        The dish symbolizes celebration, often served during Eid and festive occasions.
       </p>
-      <div class="hero-img-container">
-        <img
-          id="hero-img"
-          src="https://cdn.pixabay.com/photo/2017/02/27/14/58/watalappan-2107578_1280.jpg"
-          alt="Watalappan Dessert"
-        />
-      </div>
-      <p class="attribution">Image © Pixabay – Free for commercial use</p>
     </section>
 
-    <!-- ===== HISTORY ===== -->
-    <section id="history" class="section">
-      <div class="card">
-        <h2>📜 The Story of Watalappan</h2>
-        <p>
-          Watalappan traces its roots back to the Malay community in Sri Lanka, 
-          who introduced it during the Dutch colonial era. 
-          It was originally served at royal banquets, symbolizing luxury and cultural fusion.
-        </p>
-        <p>
-          Over time, the dessert became a national favorite — especially during Eid celebrations. 
-          Its unique blend of jaggery (palm sugar), coconut milk, and eggs gives it a rich, caramel-like flavor 
-          that’s both tropical and traditional.
-        </p>
-      </div>
-    </section>
-
-    <!-- ===== RECIPE ===== -->
     <section id="recipe" class="section">
-      <div class="card">
-        <h2>👨‍🍳 How to Make It</h2>
-        <h3>Ingredients:</h3>
-        <ul>
-          <li>1 cup coconut milk (fresh or canned)</li>
-          <li>3/4 cup jaggery, melted</li>
-          <li>3 large eggs</li>
-          <li>1 tsp cardamom powder</li>
-          <li>1/4 tsp nutmeg (optional)</li>
-          <li>1/4 tsp vanilla essence</li>
-          <li>Pinch of salt</li>
-        </ul>
-
-        <h3>Steps:</h3>
-        <ol>
-          <li>Whisk eggs until smooth — don’t overbeat.</li>
-          <li>Add melted jaggery, coconut milk, and all spices.</li>
-          <li>Strain the mixture for a silky texture.</li>
-          <li>Pour into ramekins and steam for 30–40 minutes.</li>
-          <li>Chill before serving. Top with cashews or raisins.</li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- ===== GALLERY ===== -->
-    <section id="gallery" class="section">
-      <div class="card">
-        <h2>📸 Watalappan Gallery</h2>
-        <div class="gallery-grid">
-          <img src="https://cdn.pixabay.com/photo/2020/06/10/03/43/watalappan-5281847_1280.jpg" alt="Watalappan 1" />
-          <img src="https://cdn.pixabay.com/photo/2019/03/23/13/47/watalappan-4074950_1280.jpg" alt="Watalappan 2" />
-          <img src="https://cdn.pixabay.com/photo/2017/02/27/14/58/watalappan-2107578_1280.jpg" alt="Watalappan 3" />
+      <h2>How to Make Watalappan</h2>
+      <div class="recipe-steps">
+        <div class="step">
+          <h3>Ingredients</h3>
+          <ul>
+            <li>1 cup thick coconut milk</li>
+            <li>3/4 cup jaggery (or dark brown sugar)</li>
+            <li>4 eggs</li>
+            <li>1/4 tsp nutmeg powder</li>
+            <li>1/2 tsp cardamom powder</li>
+            <li>A pinch of salt</li>
+          </ul>
+        </div>
+        <div class="step">
+          <h3>Steps</h3>
+          <ol>
+            <li>Melt jaggery gently with coconut milk.</li>
+            <li>Beat the eggs and mix in the jaggery-coconut blend.</li>
+            <li>Add spices and salt; strain for smoothness.</li>
+            <li>Pour into a baking dish, cover, and steam for 25–30 minutes.</li>
+            <li>Chill and serve with nuts on top.</li>
+          </ol>
         </div>
       </div>
     </section>
 
-    <script src="app.js"></script>
+    <section id="gallery" class="section glass">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="https://cdn.pixabay.com/photo/2016/02/19/10/00/watalappan-1209728_1280.jpg" alt="Watalappan in Bowl" />
+        <img src="https://cdn.pixabay.com/photo/2017/05/15/15/01/dessert-2316701_1280.jpg" alt="Watalappan Close-up" />
+      </div>
+    </section>
+
+    <footer class="footer glass">
+      <p>© 2025 Watalappan Website | Built by Ali</p>
+    </footer>
   </body>
 </html>
