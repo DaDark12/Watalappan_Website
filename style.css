@@ -1,4 +1,4 @@
-/* Reset & base */
+/* Base reset */
 * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
 body { background: linear-gradient(180deg,#fff8f0,#f5e1c2); color:#3b2f2f; scroll-behavior:smooth; }
 a { text-decoration:none; color:inherit; }
@@ -15,11 +15,13 @@ a { text-decoration:none; color:inherit; }
 .navbar a:hover { color:#c17a2c; }
 
 /* Hero */
-.hero { min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:0 1rem; margin-top:4rem; }
+.hero { min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:0 1rem; margin-top:4rem; position:relative; }
+.hero-bg { position:absolute; inset:0; background:radial-gradient(circle at center,#fff3e0,#f5e1c2); filter:blur(50px); z-index:-1; }
 .hero h1 { font-size:3rem; margin-bottom:1rem; color:#8B5E34; text-shadow:1px 1px 4px rgba(0,0,0,0.2);}
 .hero p { font-size:1.25rem; max-width:600px; line-height:1.6; margin-bottom:2rem;}
-.hero-svg-container { perspective:800px; }
-.hero-svg { width:320px; height:220px; transition: transform 0.5s; }
+.hero-img-container { perspective:800px; text-align:center; }
+.hero-img { width:320px; height:auto; border-radius:24px; box-shadow:0 12px 32px rgba(0,0,0,0.2); transition: transform 0.5s; }
+.attribution { font-size:0.7rem; color:#555; margin-top:0.5rem; }
 
 /* Card */
 .card {
@@ -32,7 +34,9 @@ a { text-decoration:none; color:inherit; }
 /* Sections */
 .section { padding:6rem 2rem; }
 .section h2 { font-size:2rem; margin-bottom:1rem; color:#C17A2C; }
-.section p { max-width:700px; line-height:1.7; margin-bottom:1rem; }
+.section h3 { font-size:1.25rem; margin-top:1rem; color:#8B5E34; }
+.section p, .section li { max-width:700px; line-height:1.7; margin-bottom:1rem; }
+.gallery-img { width:100%; border-radius:16px; margin-top:1rem; }
 
 /* Footer */
 footer { text-align:center; padding:2rem; background:rgba(255,255,255,0.4); backdrop-filter:blur(12px); border-radius:16px; margin:2rem; font-size:0.9rem; }
