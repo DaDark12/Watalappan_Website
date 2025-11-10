@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 
 * {
   margin: 0;
@@ -8,129 +8,81 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle at top left, #3b0a45, #0d0d0d 80%);
+  background: radial-gradient(circle at top right, #872341, #3b0a45, #0b0014);
+  background-size: 400% 400%;
+  animation: bgMove 18s ease infinite;
   color: #fff;
   overflow-x: hidden;
-  scroll-behavior: smooth;
+  min-height: 100vh;
 }
 
-/* --- NAV --- */
-.glass-nav {
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Navbar */
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1rem auto;
-  padding: 1rem 2rem;
-  max-width: 1100px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
+  padding: 1rem 3rem;
   border-radius: 2rem;
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+  margin: 1rem auto;
+  width: 90%;
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
 }
 
-.logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #ffcc70;
-}
-
-nav a {
+.navbar a {
+  color: #fff;
   margin: 0 1rem;
-  color: #fff;
   text-decoration: none;
-  transition: color 0.3s;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.navbar a:hover {
+  color: #d68c45;
 }
 
-nav a:hover {
-  color: #ffcc70;
-}
-
-/* --- HERO --- */
-.hero {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 75vh;
-  text-align: center;
-  overflow: hidden;
-}
-
-.hero-text {
-  z-index: 2;
-  max-width: 700px;
-  animation: fadeUp 1.5s ease;
-}
-
-.hero h2 {
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
-  color: #fff;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  color: #dcdcdc;
-}
-
-/* --- Floating shapes --- */
-.floating-shapes .circle {
-  position: absolute;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(255,204,112,0.4), rgba(255,255,255,0.1));
-  box-shadow: 0 0 50px rgba(255,204,112,0.2);
-  animation: float 8s ease-in-out infinite;
-}
-
-.circle { width: 150px; height: 150px; top: 15%; left: 15%; }
-.circle.delay { width: 100px; height: 100px; bottom: 20%; right: 20%; animation-delay: 3s; }
-.circle.small { width: 70px; height: 70px; top: 50%; right: 10%; animation-delay: 5s; }
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-30px); }
-}
-
-/* --- SECTIONS --- */
-.card {
-  max-width: 900px;
-  margin: 3rem auto;
+/* Sections */
+.section {
+  width: 80%;
+  margin: 4rem auto;
   padding: 2rem;
-  border-radius: 1.5rem;
-  line-height: 1.6;
-  text-align: center;
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(25px);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.1);
 }
 
-.glass {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-h2 {
-  font-size: 2rem;
+h1, h2 {
+  color: #f4e6d7;
   margin-bottom: 1rem;
-  color: #ffcc70;
+}
+p, ul {
+  color: #e8e8e8;
+  line-height: 1.8;
+}
+ul {
+  list-style-type: square;
+  margin-left: 2rem;
 }
 
-ol {
-  text-align: left;
-  display: inline-block;
-  margin: 1rem 0;
-  color: #f7f7f7;
-}
-
-/* --- FOOTER --- */
 footer {
   text-align: center;
-  padding: 2rem;
-  color: #ccc;
-  font-size: 0.9rem;
-  opacity: 0.9;
+  padding: 1rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
+footer a {
+  color: #d68c45;
+  text-decoration: none;
 }
