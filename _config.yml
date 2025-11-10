@@ -1,8 +1,6 @@
-# _config.yml
 title: "Watalappan Website"
-description: "A lovingly detailed site about Watalappan — recipe, history, and gallery."
-url: "https://dadark12.github.io"        # your GitHub Pages domain (no trailing slash)
-baseurl: "/Watalappan_Website"           # IMPORTANT: project folder name with leading slash
+description: "A smooth, liquid-glass website celebrating Sri Lanka’s iconic dessert."
+baseurl: "/Watalappan_Website"
+url: "https://dadark12.github.io"
 markdown: kramdown
 permalink: pretty
-theme: minima
