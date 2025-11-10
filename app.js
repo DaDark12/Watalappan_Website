@@ -1,77 +1,60 @@
-document.addEventListener('DOMContentLoaded', () => {
+// Cursor Trail Effect
+const trailContainer = document.createElement("div");
+trailContainer.className = "fixed top-0 left-0 pointer-events-none z-50";
+document.body.appendChild(trailContainer);
 
-  // --- 1. Interactive 3D Card Tilt Effect ---
-  const cards = document.querySelectorAll('.card-3d');
+const trailCount = 10;
+const trailDots = [];
 
-  // Prevent default "tilt" on mobile
-  if (window.innerWidth > 768) {
-    cards.forEach(card => {
-      const maxTilt = 15; // Max degrees of tilt
+for (let i = 0; i < trailCount; i++) {
+  const dot = document.createElement("div");
+  dot.className = "trail-dot bg-primary rounded-full w-4 h-4 opacity-80 absolute";
+  trailContainer.appendChild(dot);
+  trailDots.push({ el: dot, x: 0, y: 0 });
+}
 
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left; // Mouse X position within the card
-        const y = e.clientY - rect.top;  // Mouse Y position within the card
+let mouseX = 0, mouseY = 0;
 
-        const width = rect.width;
-        const height = rect.height;
+document.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
 
-        // Calculate rotation:
-        // (x / width) gives a value from 0 to 1.
-        // ((x / width) - 0.5) gives -0.5 to 0.5.
-        // * 2 gives -1 to 1.
-        // * maxTilt gives -15 to 15.
-        const rotateY = maxTilt * (((x / width) - 0.5) * 2);
-        const rotateX = maxTilt * (((y / height) - 0.5) * -2); // Invert Y-axis
+function animateTrail() {
+  let x = mouseX, y = mouseY;
+  trailDots.forEach((dot, i) => {
+    dot.x += (x - dot.x) * 0.2;
+    dot.y += (y - dot.y) * 0.2;
+    dot.el.style.transform = `translate(${dot.x - 8}px, ${dot.y - 8}px)`;
+    x = dot.x;
+    y = dot.y;
+  });
+  requestAnimationFrame(animateTrail);
+}
+animateTrail();
 
-        // Apply the 3D transform
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-      });
+// Navigation Buttons
+document.querySelectorAll("header a").forEach(a => {
+  a.addEventListener("click", (e) => {
+    e.preventDefault();
+    const target = a.getAttribute("href");
+    if (target.startsWith("#")) {
+      document.querySelector(target)?.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+});
 
-      // Reset the card when the mouse leaves
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
-      });
+// View the Recipe button scrolls to Recipe section
+document.querySelectorAll('button span').forEach(span => {
+  const parentButton = span.parentElement;
+  if (span.textContent.includes("View the Recipe")) {
+    parentButton.addEventListener("click", () => {
+      document.querySelector("#recipe")?.scrollIntoView({ behavior: "smooth" });
     });
   }
-
-
-  // --- 2. Cursor Trail Effect ---
-  const trailContainer = document.getElementById('cursor-trail-container');
-  // Don't run this on mobile devices
-  if (trailContainer && window.innerWidth > 768) {
-    
-    // Throttling to prevent creating too many elements
-    let canCreateDot = true;
-
-    window.addEventListener('mousemove', (e) => {
-      if (!canCreateDot) return;
-
-      canCreateDot = false;
-      setTimeout(() => {
-        canCreateDot = true;
-      }, 35); // Create a new dot every 35ms max
-
-      // Create the dot element
-      const dot = document.createElement('div');
-      dot.className = 'trail-dot';
-
-      // Randomize dot size
-      const size = Math.random() * 10 + 5; // Size between 5px and 15px
-      
-      dot.style.width = `${size}px`;
-      dot.style.height = `${size}px`;
-      
-      // Position it at the cursor, adjusting for size
-      dot.style.left = `${e.clientX - size / 2}px`;
-      dot.style.top = `${e.clientY - size / 2}px`;
-
-      trailContainer.appendChild(dot);
-
-      // Remove the dot after its animation (1s)
-      setTimeout(() => {
-        trailContainer.removeChild(dot);
-      }, 1000);
+  if (span.textContent.includes("Contact Us")) {
+    parentButton.addEventListener("click", () => {
+      window.open("https://github.com/DaDark12/Watalappan_Website/issues", "_blank");
     });
   }
 });
