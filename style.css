@@ -1,94 +1,139 @@
+/* --- GLOBAL STYLES --- */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  background: linear-gradient(120deg, #3b0a45, #872341, #d68c45);
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(270deg, #3b0a45, #872341, #d68c45);
+  background-size: 600% 600%;
+  animation: bgShift 20s ease infinite;
   color: #fff;
   overflow-x: hidden;
+  position: relative;
 }
 
-/* Navigation Bar */
-.navbar {
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating dots (liquid-glass depth effect) */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.25) 1px, transparent 1px);
+  background-size: 80px 80px;
+  animation: floatParticles 15s linear infinite;
+  z-index: 0;
+  opacity: 0.25;
+}
+
+@keyframes floatParticles {
+  from { background-position: 0 0; }
+  to { background-position: 80px 80px; }
+}
+
+header, main, footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- NAVIGATION BAR --- */
+.nav-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 3rem;
-  border-radius: 20px;
+  background: rgba(255,255,255,0.15);
   backdrop-filter: blur(15px);
-  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem 2rem;
+  border-radius: 2rem;
   margin: 1rem;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
-.nav-links a {
-  color: #fff;
+nav a {
+  color: white;
   text-decoration: none;
-  transition: color 0.3s ease;
+  margin: 0 1rem;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
-.nav-links a:hover {
-  color: #ffd700;
+nav a:hover {
+  color: #ffe18d;
 }
 
-/* Hero Section */
+/* --- HERO SECTION --- */
 .hero {
   text-align: center;
-  padding: 3rem 1rem;
+  padding: 4rem 1rem;
 }
 
-.hero-img {
-  max-width: 400px;
-  margin-top: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
-}
-
-/* Glass Sections */
-.glass-section {
-  margin: 4rem auto;
-  width: 90%;
-  padding: 2rem;
-  border-radius: 25px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(25px);
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
-}
-
-.glass-section h2 {
+.hero img {
+  width: 55%;
+  max-width: 500px;
+  border-radius: 1rem;
+  box-shadow: 0 0 30px rgba(255,255,255,0.2);
   margin-bottom: 1.5rem;
-  color: #ffedb5;
 }
 
+/* --- SECTIONS --- */
+section {
+  padding: 3rem 2rem;
+  border-top: 2px solid rgba(255,255,255,0.15);
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+/* --- GALLERY --- */
 .gallery {
   display: flex;
-  justify-content: center;
-  gap: 2rem;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .gallery img {
   width: 300px;
-  border-radius: 20px;
-  transition: transform 0.4s ease;
+  border-radius: 1rem;
+  transition: transform 0.4s;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.2);
 }
 
 .gallery img:hover {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
+/* --- FOOTER --- */
 footer {
   text-align: center;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.1);
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  padding: 2rem 1rem;
+  opacity: 0.8;
+  font-size: 0.9rem;
 }
