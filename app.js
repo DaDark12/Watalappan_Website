@@ -31,25 +31,32 @@ function animateTrail() {
   });
   requestAnimationFrame(animateTrail);
 }
-animateTrail();
 
-// Navigation Buttons
-document.querySelectorAll("header a").forEach(a => {
-  a.addEventListener("click", (e) => {
+// --- NAVIGATION CODE UPDATE ---
+const links = document.querySelectorAll("header a");
+links.forEach(link => {
+  link.addEventListener("click", (e) => {
     e.preventDefault();
-    const target = a.getAttribute("href");
-    if (target.startsWith("#")) {
-      document.querySelector(target)?.scrollIntoView({ behavior: "smooth" });
+    const targetText = link.textContent.trim().toLowerCase();
+    
+    if (targetText === "about") {
+      window.location.href = "#history"; // Scrolls to History section
+    } else if (targetText === "ingredients") {
+      window.location.href = "#ingredients";
+    } else if (targetText === "recipe") {
+      window.location.href = "#recipe";
+    } else if (targetText === "gallery") {
+      window.location.href = "#gallery";
     }
   });
 });
 
-// View the Recipe button scrolls to Recipe section
+// Buttons
 document.querySelectorAll('button span').forEach(span => {
   const parentButton = span.parentElement;
   if (span.textContent.includes("View the Recipe")) {
     parentButton.addEventListener("click", () => {
-      document.querySelector("#recipe")?.scrollIntoView({ behavior: "smooth" });
+      window.location.href = "#recipe";
     });
   }
   if (span.textContent.includes("Contact Us")) {
@@ -57,4 +64,25 @@ document.querySelectorAll('button span').forEach(span => {
       window.open("https://github.com/DaDark12/Watalappan_Website/issues", "_blank");
     });
   }
+
+  // 3D tilt effect on hover
+  parentButton.addEventListener("mousemove", e => {
+    const rect = parentButton.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const cx = rect.width / 2;
+    const cy = rect.height / 2;
+    const dx = (x - cx) / cx;
+    const dy = (y - cy) / cy;
+    parentButton.style.transform = `perspective(500px) rotateX(${dy*8}deg) rotateY(${dx*8}deg) scale(1.03)`;
+  });
+  parentButton.addEventListener("mouseleave", () => {
+    parentButton.style.transform = "perspective(500px) rotateX(0deg) rotateY(0deg) scale(1)";
+  });
 });
+
+// --- Footer update ---
+const footer = document.querySelector("footer p");
+if (footer) {
+  footer.innerHTML = 'Made by <a href="https://github.com/DaDark12" class="text-primary hover:underline">Ali</a>. All rights reserved.';
+}
