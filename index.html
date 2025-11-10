@@ -1,63 +1,59 @@
----
-layout: default
-title: Home
----
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Watalappan – Sri Lankan Dessert</title>
-  <link rel="stylesheet" href="{{ site.baseurl }}/style.css">
-  <script defer src="{{ site.baseurl }}/app.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Watalappan — Sri Lanka’s Royal Dessert</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="app.js"></script>
 </head>
 
 <body>
-  <header class="nav-bar">
+  <header class="glass-nav">
     <h1 class="logo">Watalappan</h1>
     <nav>
       <a href="#history">History</a>
       <a href="#recipe">Recipe</a>
-      <a href="#gallery">Gallery</a>
+      <a href="#culture">Culture</a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <img src="{{ site.baseurl }}/images/watalappan-hero.jpg" alt="Watalappan dessert">
-      <h2>The King of Sri Lankan Desserts</h2>
-      <p>A sweet coconut custard bursting with tropical flavor, Watalappan defines Sri Lankan festive cuisine.</p>
-    </section>
+  <section class="hero">
+    <div class="hero-text">
+      <h2>The Jewel of Sri Lankan Desserts</h2>
+      <p>Rich coconut custard infused with jaggery, cashews, and cardamom — Watalappan is where culture meets sweetness.</p>
+    </div>
+    <div class="floating-shapes">
+      <div class="circle"></div>
+      <div class="circle delay"></div>
+      <div class="circle small"></div>
+    </div>
+  </section>
 
-    <section id="history">
-      <h2>📜 History</h2>
-      <p>Watalappan is believed to have been introduced to Sri Lanka by Malay immigrants during the Dutch colonial period. The dish merges Middle Eastern custard techniques with South Asian flavors like jaggery, cardamom, and coconut milk. Today, it’s a centerpiece of Eid celebrations and weddings across the island.</p>
-    </section>
+  <section id="history" class="card glass">
+    <h2>📜 History</h2>
+    <p>Watalappan dates back to the 18th century, introduced by the Sri Lankan Malays. The word “Watalappan” likely comes from the Malay “Wattalappam,” meaning “cup cake pudding.” It combines tropical coconut milk with the Middle Eastern custard tradition. Over time, it became a national treasure, appearing in weddings, festivals, and Eid celebrations.</p>
+  </section>
 
-    <section id="recipe">
-      <h2>👨‍🍳 Recipe</h2>
-      <ul>
-        <li>5 eggs</li>
-        <li>1 cup thick coconut milk</li>
-        <li>200g jaggery (or brown sugar)</li>
-        <li>1 tsp cardamom powder</li>
-        <li>1 tbsp cashew nuts (optional)</li>
-      </ul>
-      <p>Beat the eggs gently, add melted jaggery and coconut milk, then mix with spices. Steam for 30–40 minutes until set. Chill before serving for the perfect silky texture!</p>
-    </section>
+  <section id="recipe" class="card glass">
+    <h2>👨‍🍳 Recipe</h2>
+    <p>Here’s how you make the most authentic Watalappan:</p>
+    <ol>
+      <li>Whisk 5 eggs lightly — don’t let it foam too much.</li>
+      <li>Melt 200g jaggery and mix it with 1 cup thick coconut milk.</li>
+      <li>Add cardamom powder, nutmeg, and a few cashews for flavor.</li>
+      <li>Steam for 40 minutes or bake in a water bath until firm.</li>
+    </ol>
+    <p>Let it chill — and you’ve got a silky, creamy custard fit for royalty.</p>
+  </section>
 
-    <section id="gallery">
-      <h2>📸 Gallery</h2>
-      <div class="gallery">
-        <img src="{{ site.baseurl }}/images/watalappan-1.jpg" alt="Freshly served Watalappan">
-        <img src="{{ site.baseurl }}/images/watalappan-2.jpg" alt="Traditional Watalappan with nuts">
-      </div>
-    </section>
-  </main>
+  <section id="culture" class="card glass">
+    <h2>🌴 Cultural Significance</h2>
+    <p>In Sri Lanka, Watalappan isn’t just dessert — it’s identity. It’s served during Eid, weddings, and festivals as a symbol of hospitality and unity. Its aroma of cardamom and jaggery reminds people of family gatherings, old traditions, and the sweetness of home.</p>
+  </section>
 
   <footer>
-    <p>© {{ "now" | date: "%Y" }} Watalappan Website. Crafted with ❤️ by Ali.</p>
+    <p>© 2025 Watalappan by Ali | Designed with ❤️</p>
   </footer>
 </body>
 </html>
