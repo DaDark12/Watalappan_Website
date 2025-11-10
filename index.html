@@ -1,118 +1,193 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Explore Watalappan, Sri Lanka's royal coconut custard dessert. Find its history, a detailed recipe, and a gallery." />
-  <title>Watalappan — Sri Lanka’s Royal Dessert</title>
-  <link rel="stylesheet" href="style.css" />
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Watalappan - The Soul of Sri Lankan Dessert</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f49d25",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221a10",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #221a10; /* Fallback for browsers that don't support TW JIT */
+        }
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+    </style>
 </head>
-<body>
-  <div id="cursor-trail-container"></div>
-
-  <div class="perspective-wrap">
-    
-    <header class="navbar glass">
-      <a href="#home" class="logo">🍮 Watalappan</a>
-      <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#history">History</a></li>
-          <li><a href="#recipe">Recipe</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <main>
-      <section id="home" class="section glass card-3d">
-        <div class="home-content">
-          <div class="text-content">
-            <h1>The Pride of Sri Lankan Desserts</h1>
-            <p>Watalappan is a creamy, caramelized coconut custard infused with jaggery and cardamom — a masterpiece born from Sri Lanka’s cultural blend of Malay and South Asian influences.</p>
-            <a href="#recipe" class="cta-button">Get the Recipe</a>
-          </div>
-          <div class="image-container">
-            
-            <img src="https://i.imgur.com/gP1bMhN.jpeg" alt="A glossy bowl of Watalappan dessert topped with cashews" />
-            <div class="image-shine"></div>
-          </div>
-        </div>
-      </section>
-
-      <section id="history" class="section glass card-3d">
-        <h2>A Story in Every Spoonful</h2>
-        <div class="history-content">
-          <div class="text-content">
-            <p>Watalappan traces its roots to the Malay community in Sri Lanka, introduced during the 18th century. Over time, it evolved into a staple dessert at weddings, festivals, and Eid celebrations, symbolizing sweetness and unity.</p>
-            <p>Its name likely originates from the Malay word *“Wattilappam”*, meaning “cup pudding.” Traditionally, it’s made with *kithul jaggery* (palm sugar), rich coconut milk, eggs, and fragrant spices like nutmeg, clove, and cardamom — a true fusion of tropical simplicity and royal richness.</p>
-          </div>
-          <div class="image-container">
-             
-            <img src="https://i.imgur.com/b2qWJtQ.jpeg" alt="Kithul jaggery, a key ingredient for Watalappan" />
-            <div class="image-shine"></div>
-          </div>
-        </div>
-      </section>
-
-      <section id="recipe" class="section glass card-3d">
-        <h2>The Royal Recipe</h2>
-        <p>Recreate this classic dessert at home. The secret is in the quality of the jaggery and the richness of the coconut milk.</p>
-        
-        <div class="recipe-layout">
-          <div class="recipe-ingredients">
-            <h3>Ingredients</h3>
-            <ul>
-              <li>1 cup (240ml) thick coconut milk</li>
-              <li>¾ cup (150g) kithul jaggery, melted or grated</li>
-              <li>4 large eggs</li>
-              <li>½ tsp ground cardamom</li>
-              <li>¼ tsp ground nutmeg</li>
-              <li>Pinch of ground cloves (optional)</li>
-              <li>Pinch of salt</li>
-              <li>1 tbsp chopped cashews (for garnish)</li>
-              <li>1 tsp raisins (for garnish, optional)</li>
-            </ul>
-          </div>
-          <div class="recipe-instructions">
-            <h3>Instructions</h3>
-            <ol>
-              <li>In a bowl, lightly whisk the 4 eggs. Do not over-beat; you don't want it to be frothy.</li>
-              <li>Add the melted and cooled jaggery to the eggs and mix well.</li>
-              <li>Pour in the thick coconut milk, ground cardamom, nutmeg, cloves, and salt. Stir gently until just combined.</li>
-              <li>Strain the mixture through a fine-mesh sieve into a heatproof bowl or individual ramekins. This step is key for a smooth, silky texture.</li>
-              <li>Garnish the top with chopped cashews and raisins.</li>
-              <li>Cover the bowl/ramekins with aluminum foil to prevent water from dripping in.</li>
-              <li>Steam for 30–40 minutes, or until a skewer inserted into the center comes out clean.</li>
-              <li>Once set, remove from the steamer and let it cool completely. Chill in the refrigerator for at least 2 hours. Serve cold.</li>
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      <section id="gallery" class="section glass card-3d">
-        <h2>Sweet Moments</h2>
-        <div class="gallery-grid">
-          <div class="gallery-item image-container">
-            
-            <img src="https://i.imgur.com/y8zXqXq.jpeg" alt="Watalappan served in a traditional clay pot" />
-          </div>
-          <div class="gallery-item image-container">
-            
-            <img src="https://i.imgur.com/3dYx1M1.jpeg" alt="A spoonful of creamy Watalappan" />
-          </div>
-          <div class="gallery-item image-container">
-            
-            <img src="https://i.imgur.com/b2qWJtQ.jpeg" alt="Watalappan ingredients: jaggery and spices" />
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="glass">
-      <p>Made by <a href="https://github.com/DaDark12" target="_blank" rel="noopener noreferrer">Ali</a> • Sri Lankan Delight © 2025</p>
-    </footer>
-
-  </div> <script src="app.js" defer></script>
-</body>
-</html>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center">
+<div class="layout-content-container flex w-full flex-col max-w-[960px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-4 sm:px-10 py-3 sticky top-0 z-50 bg-background-dark/80 backdrop-blur-sm">
+<div class="flex items-center gap-4 text-white">
+<div class="size-5">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_535)">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clippath id="clip0_6_535">
+<rect fill="white" height="48" width="48"></rect>
+</clippath>
+</defs>
+</svg>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Watalappan</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="hidden md:flex items-center gap-9">
+<a class="text-white/80 hover:text-white transition-colors text-sm font-medium leading-normal" href="#">About</a>
+<a class="text-white/80 hover:text-white transition-colors text-sm font-medium leading-normal" href="#">Ingredients</a>
+<a class="text-white/80 hover:text-white transition-colors text-sm font-medium leading-normal" href="#">Recipe</a>
+<a class="text-white/80 hover:text-white transition-colors text-sm font-medium leading-normal" href="#">Gallery</a>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate">Contact Us</span>
+</button>
+</div>
+</header>
+<main class="flex-1 px-4 py-10 sm:px-0 sm:py-16">
+<div class="@container">
+<div class="@[480px]:p-0">
+<div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4 text-center" data-alt="A beautifully rendered 3D model of a Watalappan dessert, glistening under soft light." style='background-image: linear-gradient(rgba(34, 26, 16, 0.4) 0%, rgba(34, 26, 16, 0.7) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCWAuZBEK-kCVAbgxyExa-jMzvkRatBkcNMjzw2XgZ_iEld4E0-jG2YaArPn8Ey5RcE934FNDY5GbBPy8ZBZeBZ5QLYYGXC-K_CqCo1vTokGYVkWYd_Jb2kPH3fPohTVVpf1FjZl3GrQig3zNZ91XezZ6po2o3MeCS57Zabhh6XxigKslY2Wq4u1ttD3npPtb-tnqBDtDHZnHKb4NCfiESYajobhsxwSLeFTF6j1y5LatoIw0onmgNk3mo0nVLTww62eFf6qU-Bjg");'>
+<div class="flex flex-col gap-2">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">Discover Watalappan: The Soul of Sri Lankan Dessert</h1>
+<h2 class="text-white/90 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal max-w-xl mx-auto">Experience the rich, creamy, and spiced custard pudding that has captivated generations.</h2>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate">View the Recipe</span>
+</button>
+</div>
+</div>
+</div>
+<section class="py-16 sm:py-24 px-4">
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5">The Story of Watalappan</h2>
+<p class="text-white/80 text-base font-normal leading-normal pb-3 pt-1 max-w-3xl">Delve into the history and cultural significance of Watalappan, a cherished dessert traditionally served during festivals and special occasions in Sri Lanka. Its unique flavor comes from a rich blend of coconut milk, jaggery, eggs, and aromatic spices like cardamom and nutmeg.</p>
+</section>
+<section class="py-16 sm:py-24">
+<div class="px-4">
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5">The Core Ingredients</h2>
+<p class="text-white/80 text-base font-normal leading-normal pb-6 pt-1 max-w-3xl">The magic of Watalappan lies in its simple yet profound combination of ingredients, each adding a layer of flavor and tradition.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="flex flex-col gap-4 rounded-xl border border-white/10 p-6 bg-white/5 backdrop-blur-xl">
+<div class="flex items-center justify-center size-12 rounded-lg bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-3xl">local_florist</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Jaggery</h3>
+<p class="text-white/70 text-sm font-normal leading-normal">Unrefined palm sugar that provides a deep, caramel-like sweetness and the dessert's signature dark color.</p>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-xl border border-white/10 p-6 bg-white/5 backdrop-blur-xl">
+<div class="flex items-center justify-center size-12 rounded-lg bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-3xl">water_drop</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Coconut Milk</h3>
+<p class="text-white/70 text-sm font-normal leading-normal">Thick, creamy coconut milk forms the luscious base of the custard, adding richness and a tropical note.</p>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-xl border border-white/10 p-6 bg-white/5 backdrop-blur-xl">
+<div class="flex items-center justify-center size-12 rounded-lg bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-3xl">eco</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Spices</h3>
+<p class="text-white/70 text-sm font-normal leading-normal">A warm blend of crushed cardamom, cloves, and nutmeg infuses the custard with an aromatic fragrance.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 sm:py-24 px-4">
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5">A Feast for the Eyes</h2>
+<p class="text-white/80 text-base font-normal leading-normal pb-6 pt-1 max-w-3xl">Explore the rich textures and inviting colors of Watalappan, a dessert that is as beautiful as it is delicious.</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="grid gap-4">
+<div>
+<img class="h-auto max-w-full rounded-lg" data-alt="A close-up shot of a single serving of Watalappan in a rustic bowl." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWbG0ET6cUZRnV7LDTIUtNiDz7AOiOsjA2y6KjP5RJ7Hx_fphQo5vGsFk109kehgUW-CxU4HfJdaUaGi8Rx3H4YuCtlyL-KF5wyOPZMx1amUc445M9d_9f-NHQyMauZQbV3OQ6BxzJQdDCBTMjsrZGKUNCroQJHPfEB9Cg8bm6T5uRHaJpVWuqE9C5-_Cx6LLqEmC_0yEv_CSq5KQ5gciN5LKWDFk7irphUJowi38UIOyXSmshAkDtwEZWxyBLVGd3Cb53CmHf0g"/>
+</div>
+<div>
+<img class="h-auto max-w-full rounded-lg" data-alt="A top-down view of the ingredients for Watalappan, including spices and jaggery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAueoT76zLUlP4CJS8FRIS13WJ95Fn5cym36x1jwmHaPN95E1AbgC5-G3buTY23wsdzOYh4p_1nasXWc9xoYvT-vQi-4nXJy9PRNVdCEgPlRVqpCXLNyB2g0deaFv2KC23DC8ceTdE-85iUarQG0o8hFZM1b2qwmgYKanyiAZduxVB6r5yHLXyhePgXM0A4RhgLCb_vrORgMThvXO-G9IOugrBbLomIFe_5JYD0Tbq3gQlc0lcbap96DEaKZsuN8sLg06CLdmbLEA"/>
+</div>
+</div>
+<div class="grid gap-4">
+<div>
+<img class="h-auto max-w-full rounded-lg" data-alt="A freshly steamed Watalappan garnished with cashew nuts." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-x_V4icB36p0ZDsVM1BF7ucPC3b9_Jmh101rrKlbLrLnhyON9DmMK4ZEqMorbJKY2vYnmIm8FiAgCcoLo3tQnufcZK3ig2u3e5KQ_lBhZ7DxP7etDkrOiedhl4BN7gbY1yue-kfKCLej1Mkw76M6bcSkzj3An1DfmyncHAQzmcksoZbiaOSZKXajgqfHMA9Pv1-iSRu-B3PwyxbLfIR8SKR3LI1Gwo6hPCYBN11-ugm92dymBK5LlpGt8PGOmsCAQwCZTg0Z0gg"/>
+</div>
+<div>
+<img class="h-auto max-w-full rounded-lg" data-alt="A person scooping a spoonful of creamy Watalappan." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnvX6hmJC_9GiiAV4pLvEgHgfa_lXMmUa7upFlCIuvxstc1GB13GNVLZMokNjAqZvTz1z_2qutONts7n86QsFlAIoT001iWq9FkooUJyJ3xyGj-SNSDkEYTXLgPXXjmDaFKvTax-HDOyCQSgjBjFxVY8ik-gNd-XUosq-7KsdhhcLfROvaTurmYPlq-NHkmURQHBu6UPVlaYF0KF2Mvbcu07tx48uqMKTKl0m4FFFYlgwrcP69HofiySmzTcfv0SZ126rUWGyhaQ"/>
+</div>
+</div>
+<div class="grid gap-4">
+<div>
+<img class="h-auto max-w-full rounded-lg" data-alt="Multiple servings of Watalappan arranged for a celebration." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKJU5TJPyp7gvqxwO5iCgxX-PWf8CWYgEAqXW-CseiGVQFCZ--3gjD74W65WPnUv1ciirJ_2zygSN3Xrq0wg1Ih0PzrNC947TnkkxVIkWryvHPJt9qeEBQjADJjlzqeu6WrBMEOvNnzimciqgNu7VemNDAZzkBEhGqHTsU-LNLg5djLsYlYE8GilOFparSLjsO1DPcsHfJZ_DyVwB2x215_3Q8uPyUP1kvG1VWT6netfaukKn9-YMqvIr5GFUlp9QOZTsSY2LErw"/>
+</div>
+<div>
+<img class="h-auto max-w-full rounded-lg" data-alt="The rich, dark texture of the Watalappan custard up close." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVibvASKn7cOkme8yOVq-SybFMTsbJT1Zwg1-cGjoJtXwsrpPWHyaGrnPT3MIr65ITxF6OFX3R7XgcHhml5Q-bPox55MqicKpoWZIdL7yGhNG-FXjZpRj5-FcRaCc_dKdO24qhTKQuYnI6gDqO7bkWW3jeZHrGEu_P04x70CfCbJYeHd3g6g4I5b5v2ks7AawY6egrHsYvWnIZ9-gL64e3zWieTNH-gm-CRJPP8RNdDUA8CKDywNHM8h49fc2RXlh1LvhmcgVjZg"/>
+</div>
+</div>
+<div class="grid gap-4">
+<div>
+<img class="h-auto max-w-full rounded-lg" data-alt="A slice of Watalappan on a plate, ready to be eaten." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoFvmhD5QfbSlCWUAWe4q0-wvi35YX5SI33e2Ud9E05Hbt4l5v6wKvIRmpxvtu8M_YIpNFxkSE0z7OaNa3XqWE9jSIU8bE4yl16OmdkYKZDNebC5fY-6yVBl0xg2Sj91toHeGmbARBecTWphcw3cVwdJlLTxBdzrfbtHIECxAcjzmxy6bOZOEBmj9CjECn95ztZ0y-cW34KVpoDkHvydR54O37-UJggmb5QPnTKrmSpRgRSNvGRu_joF8oRDRl46zjrYNuddC39w"/>
+</div>
+<div>
+<img class="h-auto max-w-full rounded-lg" data-alt="An abstract texture resembling the creamy surface of the dessert." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyZLEX2sRR9WRPdEj8VqutdM-VuQ2D2yqechPcUIqVQnm4RjF2ylk6P9eP78cDErKzNhJOAxaegnZdhhd-xFIoAlT8Ofm5E6FKCP1Yo6Sd8ImOBZJrGz8_lizQsmU3-TU3m72b5L1hfb60taxF62mZ9jKh-FlxH0PJLReHb8eZV83e3QO_3Hz5VmPypk-PhMCIGj0Lx_GlWuaj1IGI_FjcZ-2dzpVGajItMHpuyS8S23otM4gJ-TPwIb_tvKtTMJ9lGp3lV7zCAg"/>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-solid border-white/10 mt-16">
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 px-4 sm:px-10 py-6">
+<p class="text-white/60 text-sm font-normal leading-normal">© 2024 Watalappan. All rights reserved.</p>
+<div class="flex items-center gap-4">
+<a class="text-white/60 hover:text-white transition-colors" data-alt="Facebook icon" href="#">
+<svg aria-hidden="true" class="size-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12Z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="text-white/60 hover:text-white transition-colors" data-alt="Instagram icon" href="#">
+<svg aria-hidden="true" class="size-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 0 1 1.772 1.153 4.902 4.902 0 0 1 1.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 0 1-1.153 1.772 4.902 4.902 0 0 1-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 0 1-1.772-1.153 4.902 4.902 0 0 1-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 0 1 1.153-1.772A4.902 4.902 0 0 1 6.08 2.525c.636-.247 1.363-.416 2.427-.465C9.53 2.013 9.884 2 12.315 2Z" fill-rule="evenodd"></path><path d="M16.92 7.577a1.888 1.888 0 1 0 0-3.775 1.888 1.888 0 0 0 0 3.775Z"></path><path clip-rule="evenodd" d="M12 15.527a3.527 3.527 0 1 1 0-7.054 3.527 3.527 0 0 1 0 7.054Z" fill-rule="evenodd"></path><path d="M12 17.527a5.527 5.527 0 1 0 0-11.055 5.527 5.527 0 0 0 0 11.055Z"></path></svg>
+</a>
+<a class="text-white/60 hover:text-white transition-colors" data-alt="Twitter icon" href="#">
+<svg aria-hidden="true" class="size-5" fill="currentColor" viewbox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0 0 22 5.92a8.19 8.19 0 0 1-2.357.646 4.118 4.118 0 0 0 1.804-2.27 8.224 8.224 0 0 1-2.605.996 4.107 4.107 0 0 0-6.993 3.743 11.65 11.65 0 0 1-8.457-4.287 4.106 4.106 0 0 0 1.27 5.477A4.072 4.072 0 0 1 2.8 9.71v.052a4.105 4.105 0 0 0 3.292 4.022 4.095 4.095 0 0 1-1.853.07 4.108 4.108 0 0 0 3.834 2.85A8.233 8.233 0 0 1 2 18.407a11.616 11.616 0 0 0 6.29 1.84"></path></svg>
+</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div>
+</body></html>
