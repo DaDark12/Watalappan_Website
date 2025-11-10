@@ -1,17 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 
+/* --- Added CSS Variables for easier theme management --- */
+:root {
+  --bg-grad-1: #872341;
+  --bg-grad-2: #3b0a45;
+  --bg-grad-3: #0b0014;
+  --text-light: #fff;
+  --text-med: #e8e8e8;
+  --text-heading: #f4e6d7;
+  --accent: #d68c45;
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-shadow: rgba(255, 255, 255, 0.1);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* --- Added smooth scroll to replace app.js --- */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle at top right, #872341, #3b0a45, #0b0014);
+  background: radial-gradient(circle at top right, var(--bg-grad-1), var(--bg-grad-2), var(--bg-grad-3));
   background-size: 400% 400%;
   animation: bgMove 18s ease infinite;
-  color: #fff;
+  color: var(--text-light);
   overflow-x: hidden;
   min-height: 100vh;
 }
@@ -22,40 +40,57 @@ body {
   100% { background-position: 0% 50%; }
 }
 
+/* --- Created a single .glass class for the DRY principle --- */
+.glass {
+  backdrop-filter: blur(20px);
+  background: var(--glass-bg);
+  box-shadow: 0 4px 20px var(--glass-shadow);
+  border-radius: 2rem;
+}
+
 /* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 3rem;
-  border-radius: 2rem;
   margin: 1rem auto;
   width: 90%;
-  backdrop-filter: blur(20px);
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+  /* Removed duplicated glass styles */
 }
 
 .navbar a {
-  color: #fff;
-  margin: 0 1rem;
+  color: var(--text-light);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 .navbar a:hover {
-  color: #d68c45;
+  color: var(--accent);
 }
+
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* --- Added styles for new semantic nav list --- */
+.navbar nav ul {
+  list-style: none;
+}
+.navbar nav li {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
 
 /* Sections */
 .section {
   width: 80%;
   margin: 4rem auto;
   padding: 2rem;
-  border-radius: 2rem;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(25px);
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+  /* Removed duplicated glass styles */
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.05); /* Kept unique shadow */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .section:hover {
@@ -63,12 +98,22 @@ body {
   box-shadow: 0 0 50px rgba(255, 255, 255, 0.1);
 }
 
+/* --- Added style for the new image --- */
+.hero-image {
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  margin: 1.5rem auto 0;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
 h1, h2 {
-  color: #f4e6d7;
+  color: var(--text-heading);
   margin-bottom: 1rem;
 }
 p, ul {
-  color: #e8e8e8;
+  color: var(--text-med);
   line-height: 1.8;
 }
 ul {
@@ -78,11 +123,40 @@ ul {
 
 footer {
   text-align: center;
-  padding: 1rem;
+  padding: 2rem 1rem; /* Added more padding */
   margin-top: 3rem;
+  /* The .glass class in the HTML handles the background */
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 footer a {
-  color: #d68c45;
+  color: var(--accent);
   text-decoration: none;
 }
+
+/* --- Added Media Queries for Responsiveness --- */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .navbar nav {
+    margin-top: 1rem;
+  }
+  .navbar nav li {
+    margin: 0 0.5rem;
+  }
+  
+  .section {
+    width: 95%;
+    margin: 2rem auto;
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+/* Removed extra closing bracket */
