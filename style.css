@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
 
-/* --- CSS Variables for "Clean Liquid Glass" UI --- */
 :root {
   --font-family: 'Poppins', sans-serif;
   --bg-grad-1: #872341;
@@ -12,8 +11,8 @@
   --accent: #d68c45;
   --accent-hover: #ffb87a;
   
-  /* Liquid Glass Properties */
-  --glass-bg: rgba(255, 255, 255, 0.05);
+  /* Refined Liquid Glass Properties */
+  --glass-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
   --glass-border: rgba(255, 255, 255, 0.1);
   --glass-shadow: rgba(0, 0, 0, 0.3);
   --glass-blur: 30px;
@@ -26,7 +25,6 @@
   box-sizing: border-box;
 }
 
-/* --- Smooth Scroll (Replaces app.js) --- */
 html {
   scroll-behavior: smooth;
 }
@@ -39,6 +37,8 @@ body {
   color: var(--text-light);
   overflow-x: hidden;
   min-height: 100vh;
+  /* Hides the default cursor, so our trail is the focus */
+  cursor: none;
 }
 
 /* --- 3D Perspective Wrapper --- */
@@ -58,13 +58,46 @@ img {
   display: block;
 }
 
+/* --- Cursor Trail Effect Styles --- */
+#cursor-trail-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Allows clicks to pass through */
+  z-index: 9999;
+}
+
+.trail-dot {
+  position: absolute;
+  background-image: linear-gradient(45deg, var(--accent), var(--accent-hover));
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent-hover), 0 0 20px var(--accent-hover);
+  animation: fadeOut 1s ease-out forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
 /* --- Core "Liquid Glass" Utility Class --- */
 .glass {
   background: var(--glass-bg);
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
   border-radius: var(--border-radius);
-  border: 1px solid var(--glass-border);
+  /* Softer border for liquid effect */
+  border-top: 1px solid var(--glass-border);
+  border-left: 1px solid var(--glass-border);
   box-shadow: 0 8px 32px 0 var(--glass-shadow);
 }
 
@@ -76,8 +109,6 @@ img {
   padding: 1rem 3rem;
   margin: 1rem auto;
   width: 90%;
-  
-  /* Sticky Floating Effect */
   position: sticky;
   top: 1rem;
   z-index: 10;
@@ -89,13 +120,7 @@ img {
   font-size: 1.5rem;
   font-weight: 700;
 }
-
-.navbar nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
-
+.navbar nav ul { list-style: none; display: flex; gap: 1rem; }
 .navbar nav a {
   color: var(--text-med);
   margin: 0 0.5rem;
@@ -105,7 +130,6 @@ img {
   position: relative;
   padding: 0.5rem 0;
 }
-
 .navbar nav a::after {
   content: '';
   position: absolute;
@@ -118,12 +142,10 @@ img {
   transform-origin: bottom right;
   transition: transform 0.3s ease-out;
 }
-
 .navbar nav a:hover {
   color: var(--text-light);
   text-shadow: 0 0 5px var(--accent-hover);
 }
-
 .navbar nav a:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
@@ -134,19 +156,15 @@ img {
   width: 80%;
   margin: 4rem auto;
   padding: 2.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   
   /* Entrance Animation */
   opacity: 0;
   transform: translateY(30px);
   animation: fadeInSlideUp 1s ease-out forwards;
 }
-
-/* Staggered animation delay */
 .section:nth-child(2) { animation-delay: 0.2s; }
 .section:nth-child(3) { animation-delay: 0.4s; }
 .section:nth-child(4) { animation-delay: 0.6s; }
-
 
 @keyframes fadeInSlideUp {
   to {
@@ -155,15 +173,14 @@ img {
   }
 }
 
-/* --- 3D Card Effect --- */
+/* --- 3D Card Effect (Now JS-driven) --- */
 .card-3d {
   transform-style: preserve-3d;
+  /* Smooth transition for when the mouse leaves */
   transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform;
 }
-.card-3d:hover {
-  transform: rotateX(3deg) rotateY(-5deg) scale(1.02);
-  box-shadow: 0 15px 40px 0 var(--glass-shadow);
-}
+/* We remove the :hover transform, JS will handle it */
 
 
 h1, h2 {
@@ -180,23 +197,17 @@ p, ul, ol {
   line-height: 1.8;
   margin-bottom: 1.5rem;
 }
-ul, ol {
-  margin-left: 2rem;
-}
+ul, ol { margin-left: 2rem; }
 
-/* --- Home Section --- */
-.home-content {
+/* --- Section-Specific Layouts --- */
+.home-content, .history-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
 }
-.home-content .text-content {
-  flex: 1;
-}
-.home-content .image-container {
-  flex: 0 1 40%;
-}
+.text-content { flex: 1; }
+.image-container { flex: 0 1 40%; }
 
 .cta-button {
   display: inline-block;
@@ -214,17 +225,6 @@ ul, ol {
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
-/* --- History Section --- */
-.history-content {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-.history-content .text-content { flex: 1; }
-.history-content .image-container { flex: 0 1 40%; }
-
-
-/* --- Recipe Section --- */
 .recipe-layout {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -235,28 +235,21 @@ ul, ol {
 .recipe-instructions ol { padding-left: 1rem; }
 .recipe-instructions li { margin-bottom: 1rem; }
 
-/* --- 3D Tilt Card (for Images) --- */
-.image-container, .gallery-item {
+/* Image Container Styles */
+.image-container {
   transform-style: preserve-3d;
   border-radius: var(--border-radius);
   overflow: hidden;
   position: relative;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transform: translateZ(20px); /* Give image a base "pop" */
 }
-
-.tilt-card {
-  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-}
-.tilt-card:hover {
-  transform: translateZ(20px) rotateX(5deg) rotateY(7deg);
-}
-
-.tilt-card img {
+.image-container img {
   border-radius: var(--border-radius);
   transition: transform 0.5s ease;
 }
-.tilt-card:hover img {
-  transform: scale(1.1);
+.card-3d:hover .image-container img {
+  transform: scale(1.05);
 }
 
 /* Liquid Shine Effect on Image */
@@ -270,7 +263,7 @@ ul, ol {
   opacity: 0.3;
   transition: opacity 0.5s ease;
 }
-.tilt-card:hover .image-shine {
+.card-3d:hover .image-shine {
   opacity: 1;
   animation: shine 1.5s cubic-bezier(0.23, 1, 0.32, 1) 0.2s;
 }
@@ -298,55 +291,22 @@ footer {
   padding: 2rem;
   margin: 3rem auto 1rem;
   width: 60%;
-  border-top: 1px solid var(--glass-border);
 }
-footer a {
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 500;
-}
-footer a:hover {
-  color: var(--accent-hover);
-  text-decoration: underline;
-}
-
 
 /* --- Responsive Design --- */
 @media (max-width: 992px) {
-  .section, .navbar {
-    width: 90%;
-  }
-  .home-content, .history-content {
-    flex-direction: column;
-  }
-  .recipe-layout {
-    grid-template-columns: 1fr;
-  }
-  .image-container {
-    margin-top: 1rem;
-  }
+  .section, .navbar { width: 90%; }
+  .home-content, .history-content { flex-direction: column; }
+  .recipe-layout { grid-template-columns: 1fr; }
+  .image-container { margin-top: 1rem; }
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    gap: 1rem;
-    position: static; /* Remove sticky on mobile */
-  }
-  .navbar nav ul {
-    gap: 0.5rem;
-  }
-  .navbar nav a {
-    margin: 0 0.2rem;
-    font-size: 0.9rem;
-  }
-  
-  .section {
-    width: 95%;
-    margin: 2rem auto;
-    padding: 1.5rem;
-  }
-
+  body { cursor: auto; } /* Re-enable default cursor on mobile */
+  .navbar { flex-direction: column; gap: 1rem; position: static; }
+  .navbar nav ul { gap: 0.5rem; }
+  .navbar nav a { margin: 0 0.2rem; font-size: 0.9rem; }
+  .section { width: 95%; margin: 2rem auto; padding: 1.5rem; }
   h1 { font-size: 2rem; }
   h2 { font-size: 1.8rem; }
 }
