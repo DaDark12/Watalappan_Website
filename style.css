@@ -6,86 +6,89 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  color: #2b1d0e;
-  background: linear-gradient(135deg, #ffecd2, #fcb69f);
-  min-height: 100vh;
+  background: linear-gradient(120deg, #3b0a45, #872341, #d68c45);
+  color: #fff;
   overflow-x: hidden;
 }
 
-/* Rounded translucent nav bar */
-.top-nav {
+/* Navigation Bar */
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(20px);
-  border-radius: 2rem;
-  margin: 1.5rem auto;
-  padding: 1rem 2rem;
-  width: 90%;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 1.2rem 3rem;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.1);
+  margin: 1rem;
 }
 
-.logo {
-  font-weight: 700;
-  font-size: 1.4rem;
-  color: #4b2500;
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
 }
 
-.top-nav a {
-  margin-left: 1rem;
+.nav-links a {
+  color: #fff;
   text-decoration: none;
-  color: #4b2500;
-  font-weight: 500;
-  transition: 0.3s ease;
+  transition: color 0.3s ease;
 }
 
-.top-nav a:hover {
-  color: #d2691e;
+.nav-links a:hover {
+  color: #ffd700;
 }
 
-/* Hero */
+/* Hero Section */
 .hero {
   text-align: center;
-  padding: 4rem 1rem;
-  max-width: 800px;
-  margin: auto;
+  padding: 3rem 1rem;
 }
 
-.hero img {
-  width: 250px;
-  margin-top: 1.5rem;
-  border-radius: 1rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+.hero-img {
+  max-width: 400px;
+  margin-top: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+}
+
+/* Glass Sections */
+.glass-section {
+  margin: 4rem auto;
+  width: 90%;
+  padding: 2rem;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+}
+
+.glass-section h2 {
+  margin-bottom: 1.5rem;
+  color: #ffedb5;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.gallery img {
+  width: 300px;
+  border-radius: 20px;
   transition: transform 0.4s ease;
 }
 
-.hero img:hover {
-  transform: scale(1.05);
+.gallery img:hover {
+  transform: scale(1.08);
 }
 
-/* Sections */
-section {
-  padding: 3rem 2rem;
-  max-width: 900px;
-  margin: auto;
-}
-
-h1, h2 {
-  color: #4b2500;
-  margin-bottom: 1rem;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-ol {
-  margin-left: 1.5rem;
-  line-height: 1.8;
-}
-
-/* Footer */
 footer {
   text-align: center;
   padding: 2rem;
-  font-size: 0.9rem;
-  opacity: 0.8;
+  background: rgba(255, 255, 255, 0.1);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
