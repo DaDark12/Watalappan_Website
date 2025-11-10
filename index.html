@@ -10,40 +10,43 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
 <script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#f49d25",
-                        "background-light": "#f8f7f5",
-                        "background-dark": "#221a10",
-                    },
-                    fontFamily: {
-                        "display": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.5rem",
-                        "lg": "1rem",
-                        "xl": "1.5rem",
-                        "full": "9999px"
-                    },
-                },
+tailwind.config = {
+    darkMode: "class",
+    theme: {
+        extend: {
+            colors: {
+                "primary": "#f49d25",
+                "background-light": "#f8f7f5",
+                "background-dark": "#221a10",
             },
-        }
-    </script>
+            fontFamily: {
+                "display": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"]
+            },
+            borderRadius: {
+                "DEFAULT": "0.5rem",
+                "lg": "1rem",
+                "xl": "1.5rem",
+                "full": "9999px"
+            },
+        },
+    },
+}
+</script>
 <style>
-        body {
-            background-color: #221a10; /* fallback for browsers that don't support TW JIT */
-        }
-        .material-symbols-outlined {
-          font-variation-settings:
-          'FILL' 0,
-          'wght' 400,
-          'GRAD' 0,
-          'opsz' 24
-        }
-    </style>
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #221a10;
+}
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
+</style>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-display">
 <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
@@ -53,28 +56,30 @@
 <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-4 sm:px-10 py-3 sticky top-0 z-50 bg-background-dark/80 backdrop-blur-sm">
 <div class="flex items-center gap-4 text-white">
 <div class="size-5">
-<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_6_535)">
 <path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
 </g>
 <defs>
-<clippath id="clip0_6_535">
+<clipPath id="clip0_6_535">
 <rect fill="white" height="48" width="48"></rect>
-</clippath>
+</clipPath>
 </defs>
 </svg>
 </div>
-<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]"><a href="https://github.com/DaDark12" class="hover:underline">Ali</a></h2>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Watalappan</h2>
 </div>
 <div class="flex flex-1 justify-end gap-8">
 <div class="hidden md:flex items-center gap-9">
+<a class="text-white/80 hover:text-white transition-colors text-sm font-medium leading-normal" href="#about">About</a>
 <a class="text-white/80 hover:text-white transition-colors text-sm font-medium leading-normal" href="#ingredients">Ingredients</a>
 <a class="text-white/80 hover:text-white transition-colors text-sm font-medium leading-normal" href="#recipe">Recipe</a>
 <a class="text-white/80 hover:text-white transition-colors text-sm font-medium leading-normal" href="#gallery">Gallery</a>
 </div>
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors" onclick="window.open('https://github.com/DaDark12/Watalappan_Website/issues', '_blank')">
-<span class="truncate">Contact Us</span>
-</button>
+<a class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors"
+   onclick="window.open('https://github.com/DaDark12/Watalappan_Website/issues','_blank')">
+  <span class="truncate">Contact Us</span>
+</a>
 </div>
 </header>
 <main class="flex-1 px-4 py-10 sm:px-0 sm:py-16">
@@ -85,25 +90,22 @@
 <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">Discover Watalappan: The Soul of Sri Lankan Dessert</h1>
 <h2 class="text-white/90 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal max-w-xl mx-auto">Experience the rich, creamy, and spiced custard pudding that has captivated generations.</h2>
 </div>
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<a class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:bg-primary/90 transition-colors" href="#recipe">
 <span class="truncate">View the Recipe</span>
-</button>
+</a>
 </div>
 </div>
 </div>
-
-<section id="story" class="py-16 sm:py-24 px-4">
+<section class="py-16 sm:py-24 px-4" id="about">
 <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5">The Story of Watalappan</h2>
 <p class="text-white/80 text-base font-normal leading-normal pb-3 pt-1 max-w-3xl">Delve into the history and cultural significance of Watalappan, a cherished dessert traditionally served during festivals and special occasions in Sri Lanka. Its unique flavor comes from a rich blend of coconut milk, jaggery, eggs, and aromatic spices like cardamom and nutmeg.</p>
 </section>
-
-<section id="ingredients" class="py-16 sm:py-24">
+<section class="py-16 sm:py-24" id="ingredients">
 <div class="px-4">
 <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5">The Core Ingredients</h2>
 <p class="text-white/80 text-base font-normal leading-normal pb-6 pt-1 max-w-3xl">The magic of Watalappan lies in its simple yet profound combination of ingredients, each adding a layer of flavor and tradition.</p>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-<!-- ingredient cards -->
 <div class="flex flex-col gap-4 rounded-xl border border-white/10 p-6 bg-white/5 backdrop-blur-xl">
 <div class="flex items-center justify-center size-12 rounded-lg bg-primary/20 text-primary">
 <span class="material-symbols-outlined text-3xl">local_florist</span>
@@ -133,42 +135,71 @@
 </div>
 </div>
 </section>
-
-<!-- NEW Recipe Section -->
-<section id="recipe" class="py-16 sm:py-24 px-4">
-<div class="px-4">
-<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5">Recipe</h2>
-<p class="text-white/80 text-base font-normal leading-normal pb-6 pt-1 max-w-3xl">Follow these simple steps to make the perfect Watalappan at home. This rich and creamy custard dessert combines coconut milk, jaggery, eggs, and aromatic spices to create a dessert that is loved across generations.</p>
+<section class="py-16 sm:py-24 px-4" id="recipe">
+<div class="max-w-3xl">
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5">The Recipe</h2>
+<p class="text-white/80 text-base font-normal leading-normal pb-6 pt-1">Follow these simple steps to create your own authentic Watalappan at home. This recipe yields 6-8 servings.</p>
 </div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-<div class="flex flex-col gap-4 rounded-xl border border-white/10 p-6 bg-white/5 backdrop-blur-xl">
-<h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Step 1</h3>
-<p class="text-white/70 text-sm font-normal leading-normal">Mix jaggery with a little water and melt over low heat. Strain to remove impurities.</p>
+<div class="flex flex-col lg:flex-row gap-12 lg:gap-16">
+<div class="flex-1">
+<h3 class="text-primary text-lg font-bold leading-tight tracking-[-0.015em] mb-4">You will need:</h3>
+<ul class="space-y-3 text-white/90">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span>5 large eggs</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span>250g Kithul Jaggery, grated</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span>400ml thick coconut milk</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span>5 cardamom pods, crushed</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span>1/4 teaspoon of nutmeg powder</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span>A pinch of salt</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span>2 tablespoons of cashew nuts, roasted (for garnish)</span>
+</li>
+</ul>
 </div>
-<div class="flex flex-col gap-4 rounded-xl border border-white/10 p-6 bg-white/5 backdrop-blur-xl">
-<h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Step 2</h3>
-<p class="text-white/70 text-sm font-normal leading-normal">Whisk eggs and add coconut milk, cardamom, nutmeg, and melted jaggery. Combine well.</p>
-</div>
-<div class="flex flex-col gap-4 rounded-xl border border-white/10 p-6 bg-white/5 backdrop-blur-xl">
-<h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Step 3</h3>
-<p class="text-white/70 text-sm font-normal leading-normal">Pour mixture into a greased baking dish and steam for 45–60 minutes until set. Let cool before serving.</p>
+<div class="flex-1">
+<h3 class="text-primary text-lg font-bold leading-tight tracking-[-0.015em] mb-4">Instructions:</h3>
+<ol class="space-y-4 text-white/90 list-decimal list-inside">
+<li>In a bowl, whisk the eggs lightly. Add the grated jaggery and mix until it dissolves completely.</li>
+<li>Strain the egg and jaggery mixture to remove any impurities.</li>
+<li>Gently stir in the thick coconut milk, crushed cardamom, nutmeg powder, and a pinch of salt. Mix well but do not overbeat.</li>
+<li>Pour the mixture into a greased, heatproof dish (or individual bowls).</li>
+<li>Cover the dish with foil and steam for 30-40 minutes, or until the custard is set. A knife inserted in the center should come out clean.</li>
+<li>Let it cool completely. Garnish with roasted cashew nuts before serving. Can be served warm or chilled.</li>
+</ol>
 </div>
 </div>
 </section>
-
-<!-- Gallery Section remains unchanged -->
-<section id="gallery" class="py-16 sm:py-24 px-4">
+<section class="py-16 sm:py-24 px-4" id="gallery">
 <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5">A Feast for the Eyes</h2>
 <p class="text-white/80 text-base font-normal leading-normal pb-6 pt-1 max-w-3xl">Explore the rich textures and inviting colors of Watalappan, a dessert that is as beautiful as it is delicious.</p>
-<!-- Gallery grid code remains the same -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<!-- gallery images here (unchanged) -->
+</div>
 </section>
-
 </main>
 <footer class="border-t border-solid border-white/10 mt-16">
 <div class="flex flex-col sm:flex-row items-center justify-between gap-4 px-4 sm:px-10 py-6">
-<p class="text-white/60 text-sm font-normal leading-normal">Made by <a href="https://github.com/DaDark12" class="hover:underline">Ali</a>. All rights reserved.</p>
+<p class="text-white/60 text-sm font-normal leading-normal">Made by <a href="https://github.com/DaDark12" class="underline">Ali</a>. All rights reserved.</p>
 <div class="flex items-center gap-4">
-<!-- social icons remain the same -->
+<!-- social icons unchanged -->
 </div>
 </div>
 </footer>
@@ -176,6 +207,5 @@
 </div>
 </div>
 </div>
-<script src="app.js"></script>
 </body>
 </html>
