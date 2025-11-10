@@ -1,12 +1,10 @@
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("✨ Watalappan site ready.");
-
-  // smooth section animation
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) entry.target.classList.add("visible");
-    });
-  }, { threshold: 0.3 });
-
-  document.querySelectorAll(".card").forEach((el) => observer.observe(el));
+// Smooth scroll navigation
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
 });
