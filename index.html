@@ -1,71 +1,63 @@
+---
+layout: default
+title: Home
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Watalappan – The Sri Lankan Delight</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="app.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watalappan – Sri Lankan Dessert</title>
+  <link rel="stylesheet" href="{{ site.baseurl }}/style.css">
+  <script defer src="{{ site.baseurl }}/app.js"></script>
 </head>
+
 <body>
-  <header>
-    <nav class="navbar glassy">
-      <h1 class="logo">Watalappan</h1>
-      <ul class="nav-links">
-        <li><a href="#history">History</a></li>
-        <li><a href="#recipe">Recipe</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-      </ul>
+  <header class="nav-bar">
+    <h1 class="logo">Watalappan</h1>
+    <nav>
+      <a href="#history">History</a>
+      <a href="#recipe">Recipe</a>
+      <a href="#gallery">Gallery</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <div class="hero-text">
-      <h2>The Sweet Essence of Sri Lanka</h2>
-      <p>A creamy coconut dessert that’s rich, spiced, and loved across generations.</p>
-    </div>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Watalappan-Sri_Lanka.jpg/1200px-Watalappan-Sri_Lanka.jpg" 
-         alt="Watalappan dessert" class="hero-img">
-  </section>
-
   <main>
-    <section id="history" class="glass-section">
+    <section class="hero">
+      <img src="{{ site.baseurl }}/images/watalappan-hero.jpg" alt="Watalappan dessert">
+      <h2>The King of Sri Lankan Desserts</h2>
+      <p>A sweet coconut custard bursting with tropical flavor, Watalappan defines Sri Lankan festive cuisine.</p>
+    </section>
+
+    <section id="history">
       <h2>📜 History</h2>
-      <p>
-        Watalappan originated from the Malay community of Sri Lanka and became a cultural
-        icon during festivals like Eid. It blends the creamy sweetness of coconut milk
-        and jaggery with cardamom and nutmeg — a legacy of centuries of trade and spice routes.
-      </p>
-      <p>
-        Today, it's served at weddings, celebrations, and family gatherings. Its name is
-        believed to derive from the Dutch word “Vla” (custard), showing Sri Lanka’s colonial
-        culinary influences.
-      </p>
+      <p>Watalappan is believed to have been introduced to Sri Lanka by Malay immigrants during the Dutch colonial period. The dish merges Middle Eastern custard techniques with South Asian flavors like jaggery, cardamom, and coconut milk. Today, it’s a centerpiece of Eid celebrations and weddings across the island.</p>
     </section>
 
-    <section id="recipe" class="glass-section">
-      <h2>🥣 Recipe</h2>
-      <ol>
-        <li>Grate 1 cup of jaggery and melt it with ½ cup of coconut milk.</li>
-        <li>Whisk 5 eggs until smooth.</li>
-        <li>Mix in the melted jaggery, 2 cups coconut milk, cardamom, and nutmeg.</li>
-        <li>Strain for smoothness and pour into ramekins.</li>
-        <li>Steam for 20–25 minutes, cool, and garnish with roasted cashews.</li>
-      </ol>
-      <p class="tip">Tip: Chill before serving for the best texture!</p>
+    <section id="recipe">
+      <h2>👨‍🍳 Recipe</h2>
+      <ul>
+        <li>5 eggs</li>
+        <li>1 cup thick coconut milk</li>
+        <li>200g jaggery (or brown sugar)</li>
+        <li>1 tsp cardamom powder</li>
+        <li>1 tbsp cashew nuts (optional)</li>
+      </ul>
+      <p>Beat the eggs gently, add melted jaggery and coconut milk, then mix with spices. Steam for 30–40 minutes until set. Chill before serving for the perfect silky texture!</p>
     </section>
 
-    <section id="gallery" class="glass-section">
+    <section id="gallery">
       <h2>📸 Gallery</h2>
       <div class="gallery">
-        <img src="https://www.hungrylankan.com/wp-content/uploads/2025/09/Sri-Lankan-watalappam-3.jpg" alt="Watalappan 1">
-        <img src="https://www.nomadette.com/wp-content/uploads/2021/06/watalappan-1.jpg" alt="Watalappan 2">
+        <img src="{{ site.baseurl }}/images/watalappan-1.jpg" alt="Freshly served Watalappan">
+        <img src="{{ site.baseurl }}/images/watalappan-2.jpg" alt="Traditional Watalappan with nuts">
       </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Watalappan Website by Ali Akbar Hyder</p>
+    <p>© {{ "now" | date: "%Y" }} Watalappan Website. Crafted with ❤️ by Ali.</p>
   </footer>
 </body>
 </html>
