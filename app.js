@@ -1,88 +1,51 @@
-// Cursor Trail Effect
-const trailContainer = document.createElement("div");
-trailContainer.className = "fixed top-0 left-0 pointer-events-none z-50";
-document.body.appendChild(trailContainer);
+// app.js — adds a smooth cursor trail glow effect
+document.addEventListener("DOMContentLoaded", () => {
+  const trailContainer = document.createElement("div");
+  trailContainer.id = "cursor-trail-container";
+  trailContainer.style.position = "fixed";
+  trailContainer.style.top = "0";
+  trailContainer.style.left = "0";
+  trailContainer.style.width = "100%";
+  trailContainer.style.height = "100%";
+  trailContainer.style.pointerEvents = "none";
+  trailContainer.style.overflow = "hidden";
+  document.body.appendChild(trailContainer);
 
-const trailCount = 10;
-const trailDots = [];
+  if (window.innerWidth <= 768) return; // Disable for mobile
 
-for (let i = 0; i < trailCount; i++) {
-  const dot = document.createElement("div");
-  dot.className = "trail-dot bg-primary rounded-full w-4 h-4 opacity-80 absolute";
-  trailContainer.appendChild(dot);
-  trailDots.push({ el: dot, x: 0, y: 0 });
-}
+  let canCreateDot = true;
 
-let mouseX = 0, mouseY = 0;
+  window.addEventListener("mousemove", (e) => {
+    if (!canCreateDot) return;
+    canCreateDot = false;
+    setTimeout(() => (canCreateDot = true), 25);
 
-document.addEventListener("mousemove", (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-});
+    const dot = document.createElement("div");
+    const size = Math.random() * 8 + 6; // 6–14px
+    const colors = ["#f49d25", "#ffb84d", "#ffcc80"];
+    const color = colors[Math.floor(Math.random() * colors.length)];
 
-function animateTrail() {
-  let x = mouseX, y = mouseY;
-  trailDots.forEach((dot, i) => {
-    dot.x += (x - dot.x) * 0.2;
-    dot.y += (y - dot.y) * 0.2;
-    dot.el.style.transform = `translate(${dot.x - 8}px, ${dot.y - 8}px)`;
-    x = dot.x;
-    y = dot.y;
-  });
-  requestAnimationFrame(animateTrail);
-}
+    dot.style.position = "absolute";
+    dot.style.width = `${size}px`;
+    dot.style.height = `${size}px`;
+    dot.style.borderRadius = "50%";
+    dot.style.background = color;
+    dot.style.left = `${e.clientX - size / 2}px`;
+    dot.style.top = `${e.clientY - size / 2}px`;
+    dot.style.opacity = "0.9";
+    dot.style.pointerEvents = "none";
+    dot.style.transition = "transform 1s ease-out, opacity 1s ease-out";
+    dot.style.zIndex = "9999";
+    dot.style.transform = "scale(1)";
+    trailContainer.appendChild(dot);
 
-// --- NAVIGATION CODE UPDATE ---
-const links = document.querySelectorAll("header a");
-links.forEach(link => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    const targetText = link.textContent.trim().toLowerCase();
-    
-    if (targetText === "about") {
-      window.location.href = "#history"; // Scrolls to History section
-    } else if (targetText === "ingredients") {
-      window.location.href = "#ingredients";
-    } else if (targetText === "recipe") {
-      window.location.href = "#recipe";
-    } else if (targetText === "gallery") {
-      window.location.href = "#gallery";
-    }
-  });
-});
-
-// Buttons
-document.querySelectorAll('button span').forEach(span => {
-  const parentButton = span.parentElement;
-  if (span.textContent.includes("View the Recipe")) {
-    parentButton.addEventListener("click", () => {
-      window.location.href = "#recipe";
+    requestAnimationFrame(() => {
+      dot.style.opacity = "0";
+      dot.style.transform = "scale(3)";
     });
-  }
-  if (span.textContent.includes("Contact Us")) {
-    parentButton.addEventListener("click", () => {
-      window.open("https://github.com/DaDark12/Watalappan_Website/issues", "_blank");
-    });
-  }
 
-  // 3D tilt effect on hover
-  parentButton.addEventListener("mousemove", e => {
-    const rect = parentButton.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const cx = rect.width / 2;
-    const cy = rect.height / 2;
-    const dx = (x - cx) / cx;
-    const dy = (y - cy) / cy;
-    parentButton.style.transform = `perspective(500px) rotateX(${dy*8}deg) rotateY(${dx*8}deg) scale(1.03)`;
-  });
-  parentButton.addEventListener("mouseleave", () => {
-    parentButton.style.transform = "perspective(500px) rotateX(0deg) rotateY(0deg) scale(1)";
+    setTimeout(() => {
+      dot.remove();
+    }, 1000);
   });
 });
-
-// --- Footer update ---
-const footer = document.querySelector("footer p");
-if (footer) {
-  footer.innerHTML = 'Made by <a href="https://github.com/DaDark12" class="text-primary hover:underline">Ali</a>. All rights reserved.';
-}
