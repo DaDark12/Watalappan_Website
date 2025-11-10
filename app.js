@@ -1,23 +1,15 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const nav = document.querySelector(".top-nav");
-
-  window.addEventListener("scroll", () => {
-    const scrolled = window.scrollY > 50;
-    nav.style.backdropFilter = scrolled ? "blur(40px)" : "blur(20px)";
-    nav.style.background = scrolled
-      ? "rgba(255, 255, 255, 0.45)"
-      : "rgba(255, 255, 255, 0.35)";
+// Smooth scroll for nav links
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector(link.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
   });
+});
 
-  // Smooth fade-in animation
-  const fadeItems = document.querySelectorAll("section");
-  fadeItems.forEach((sec, i) => {
-    sec.style.opacity = 0;
-    sec.style.transform = "translateY(50px)";
-    sec.style.transition = "0.8s ease";
-    setTimeout(() => {
-      sec.style.opacity = 1;
-      sec.style.transform = "translateY(0)";
-    }, 300 * i);
-  });
+// Dynamic glow effect on scroll
+window.addEventListener('scroll', () => {
+  const navbar = document.querySelector('.navbar');
+  navbar.style.boxShadow = window.scrollY > 50 ? '0 0 20px rgba(255,255,255,0.4)' : 'none';
 });
