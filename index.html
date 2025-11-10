@@ -1,26 +1,71 @@
----
-layout: default
-title: Home
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Watalappan – The Sri Lankan Delight</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar glassy">
+      <h1 class="logo">Watalappan</h1>
+      <ul class="nav-links">
+        <li><a href="#history">History</a></li>
+        <li><a href="#recipe">Recipe</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<section class="hero">
-  <h1>Discover Watalappan</h1>
-  <p>The golden Sri Lankan coconut custard dessert — silky, spiced, and sweet.</p>
-  <img src="{{ site.baseurl }}/watalappan-hero.jpg" alt="Watalappan Dessert">
-</section>
+  <section class="hero">
+    <div class="hero-text">
+      <h2>The Sweet Essence of Sri Lanka</h2>
+      <p>A creamy coconut dessert that’s rich, spiced, and loved across generations.</p>
+    </div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Watalappan-Sri_Lanka.jpg/1200px-Watalappan-Sri_Lanka.jpg" 
+         alt="Watalappan dessert" class="hero-img">
+  </section>
 
-<section class="details">
-  <h2>What Is Watalappan?</h2>
-  <p>Watalappan is a traditional Sri Lankan dessert made from coconut milk, jaggery, and aromatic spices like cardamom and nutmeg. Its rich caramel flavor and silky texture make it a national favorite, often enjoyed during Eid and weddings.</p>
-</section>
+  <main>
+    <section id="history" class="glass-section">
+      <h2>📜 History</h2>
+      <p>
+        Watalappan originated from the Malay community of Sri Lanka and became a cultural
+        icon during festivals like Eid. It blends the creamy sweetness of coconut milk
+        and jaggery with cardamom and nutmeg — a legacy of centuries of trade and spice routes.
+      </p>
+      <p>
+        Today, it's served at weddings, celebrations, and family gatherings. Its name is
+        believed to derive from the Dutch word “Vla” (custard), showing Sri Lanka’s colonial
+        culinary influences.
+      </p>
+    </section>
 
-<section class="recipe">
-  <h2>Traditional Recipe</h2>
-  <ol>
-    <li>Whisk 5 eggs until smooth.</li>
-    <li>Add 1 cup jaggery syrup and 2 cups coconut milk.</li>
-    <li>Stir in a pinch of nutmeg and cardamom.</li>
-    <li>Pour into a mold and steam for 30 minutes.</li>
-    <li>Cool, garnish with cashews, and serve chilled.</li>
-  </ol>
-</section>
+    <section id="recipe" class="glass-section">
+      <h2>🥣 Recipe</h2>
+      <ol>
+        <li>Grate 1 cup of jaggery and melt it with ½ cup of coconut milk.</li>
+        <li>Whisk 5 eggs until smooth.</li>
+        <li>Mix in the melted jaggery, 2 cups coconut milk, cardamom, and nutmeg.</li>
+        <li>Strain for smoothness and pour into ramekins.</li>
+        <li>Steam for 20–25 minutes, cool, and garnish with roasted cashews.</li>
+      </ol>
+      <p class="tip">Tip: Chill before serving for the best texture!</p>
+    </section>
+
+    <section id="gallery" class="glass-section">
+      <h2>📸 Gallery</h2>
+      <div class="gallery">
+        <img src="https://www.hungrylankan.com/wp-content/uploads/2025/09/Sri-Lankan-watalappam-3.jpg" alt="Watalappan 1">
+        <img src="https://www.nomadette.com/wp-content/uploads/2021/06/watalappan-1.jpg" alt="Watalappan 2">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Watalappan Website by Ali Akbar Hyder</p>
+  </footer>
+</body>
+</html>
